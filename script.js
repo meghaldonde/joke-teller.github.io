@@ -11,7 +11,7 @@ function toggleButton() {
 function tellMeAJoke(joke) {
     VoiceRSS.speech({
         key: config.API_KEY,
-        src: 'Do you want to hear a joke?....' + joke,
+        src: joke,
         hl: 'en-us',
         r: 0,
         c: 'mp3',
@@ -46,3 +46,6 @@ async function getJokes() {
 //Event Listeners
 button.addEventListener('click', getJokes);
 audioElement.addEventListener('ended', toggleButton);
+
+
+tellMeAJoke('Do you want to hear a joke?');
